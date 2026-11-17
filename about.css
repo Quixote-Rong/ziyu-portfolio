@@ -1,0 +1,86 @@
+/* Standalone About page, adapted from Ziyu Wang's Cargo CSS. */
+.ziyu-about-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 78px 6vw 54px;
+  position: relative;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(90deg,rgba(214,170,178,.14) 0px,rgba(214,170,178,.14) 1px,transparent 1px,transparent 120px),
+    repeating-linear-gradient(90deg,transparent 0px,transparent 68px,rgba(181,201,226,.12) 68px,rgba(181,201,226,.12) 69px,transparent 69px,transparent 170px),
+    repeating-linear-gradient(90deg,transparent 0px,transparent 34px,rgba(233,219,170,.09) 34px,rgba(233,219,170,.09) 35px,transparent 35px,transparent 220px),
+    radial-gradient(circle at 14% 18%,rgba(252,225,228,.38),transparent 28%),
+    radial-gradient(circle at 82% 16%,rgba(246,231,189,.24),transparent 24%),
+    linear-gradient(180deg,#fbf8f3 0%,#f8f3ee 100%);
+}
+.ziyu-about-page::after { content:""; position:absolute; inset:18px; border:1.5px dashed rgba(204,154,162,.36); border-radius:26px; pointer-events:none; }
+.site-mini-nav { position:absolute;top:28px;right:6vw;z-index:10;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap; }
+.site-mini-nav a {display:inline-block;padding:9px 16px;font:12px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:#9b7b7f;text-decoration:none;border:1px solid #ead8d9;border-radius:999px;background:rgba(255,250,247,.78);transition:transform .24s ease,background .24s ease,border-color .24s ease;}
+.site-mini-nav a:hover {transform:translateY(-2px);background:#f3e6e8;border-color:#dcbec3;}
+.site-mini-nav a[aria-current="page"] {background:#efd9df;border-color:#e3bfc9;}
+.about-sticker {position:absolute;z-index:2;color:#c98b97;opacity:.85;font-size:22px;pointer-events:none;}
+.about-sticker.s1 {left:2.4vw;top:125px;}
+.about-sticker.s2 {right:8vw;top:150px;color:#d0ad57;}
+.about-sticker.s3 {right:6vw;bottom:38px;color:#c99aa4;}
+.about-layout {position:relative;z-index:2;max-width:1460px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center;}
+.about-left {padding:28px 0 20px;}
+.about-hero {margin-bottom:45px;}
+.about-mini {margin:0 0 18px;font-size:15px;letter-spacing:.16em;color:#b07d88;font-style:italic;text-align:left;}
+.about-title {display:flex;align-items:flex-end;gap:10px;margin:0 0 18px;line-height:1;}
+.about-title span {display:inline-flex;align-items:center;justify-content:center;min-width:88px;height:103px;padding:8px 12px;font:700 72px/1 Georgia,"Times New Roman",serif;color:#4b3d39;border-radius:14px;border:1.5px dashed rgba(176,124,136,.42);box-shadow:0 12px 24px rgba(99,75,70,.08),inset 0 0 0 1px rgba(255,255,255,.55);transition:transform .32s cubic-bezier(.2,.9,.2,1.2), box-shadow .32s ease;}
+.about-title span:nth-child(1) {background:#e7c4cb;transform:rotate(-4deg);}
+.about-title span:nth-child(2) {background:linear-gradient(90deg,rgba(255,255,255,.18) 50%,transparent 50%),linear-gradient(rgba(255,255,255,.18) 50%,transparent 50%),#dcc7b1;background-size:18px 18px;transform:rotate(2deg);}
+.about-title span:nth-child(3) {background:#efd8df;transform:rotate(-2deg);}
+.about-title span:nth-child(4) {background:#b8c4d9;transform:rotate(3deg);}
+.about-title span:nth-child(5) {background:#f5ead8;transform:rotate(-3deg);}
+.about-title span:hover {transform:translateY(-9px) rotate(0) !important;box-shadow:0 18px 35px rgba(99,75,70,.13);}
+.about-subtitle {margin:0;color:#8c7773;font-size:18px;font-style:italic;letter-spacing:.02em;}
+.about-text {max-width:620px;}
+.about-text p {margin:0 0 24px;font:22px/1.74 Georgia,"Times New Roman",serif;color:#4f4542;}
+.education-card {margin-top:40px;max-width:760px;padding:28px 34px 30px;border-radius:26px;background:rgba(255,255,255,.48);border:1.5px dashed rgba(204,154,162,.36);box-shadow:0 18px 36px rgba(121,91,85,.08);position:relative;}
+.education-card::after {content:"♡";position:absolute;right:24px;bottom:18px;color:#d19aa5;font-size:26px;}
+.education-label {display:inline-block;margin:0 0 22px;padding:7px 18px;border-radius:999px;background:#f4d8df;border:1px dashed rgba(176,124,136,.36);color:#b96f7d;font:600 14px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;}
+.education-row {display:grid;grid-template-columns:130px 1fr;gap:26px;margin:14px 0;align-items:baseline;}
+.edu-year {color:#c37f8c;font:600 17px Arial,sans-serif;white-space:nowrap;}
+.edu-text {color:#4f4542;font:18px/1.5 Arial,Helvetica,sans-serif;}
+.about-right {position:relative;min-height:610px;display:flex;align-items:center;justify-content:center;isolation:isolate;}
+.about-collage {display:block;width:114%;max-width:none;height:auto;filter:drop-shadow(0 16px 30px rgba(121,91,85,.04));transform:rotate(-1deg);transition:transform .55s cubic-bezier(.2,.9,.2,1),filter .55s ease;}
+.about-right:hover .about-collage {transform:translateY(-8px) scale(1.035) rotate(.4deg);filter:drop-shadow(0 24px 34px rgba(121,91,85,.13));}
+.hand-note {position:absolute;right:-2%;top:18%;color:#d07f8d;font-size:34px;transform:rotate(10deg);pointer-events:none;transition:transform .4s ease;}
+.about-right:hover .hand-note {transform:translateY(-8px) rotate(-12deg) scale(1.12);}
+@media(max-width:1200px) and (min-width:981px) {
+ .about-layout {gap:36px;}
+ .about-title span {min-width:76px;height:88px;padding:6px 9px;font-size:58px;}
+ .about-title {gap:7px;}
+ .about-text p {font-size:19px;}
+ .about-right {min-height:520px;}
+}
+@media (max-width:980px) {
+ .ziyu-about-page {padding:36px 5vw 65px;}
+ .ziyu-about-page::after {inset:9px;}
+ .site-mini-nav {position:relative;top:auto;right:auto;justify-content:center;margin:0 0 34px;gap:7px;}
+ .site-mini-nav a {font-size:11px;padding:8px 12px;}
+ .about-layout {grid-template-columns:1fr;gap:8px;}
+ .about-left {padding:6px 0 0;}
+ .about-hero {margin-bottom:28px;}
+ .about-title {justify-content:center;}
+ .about-mini,.about-subtitle {text-align:center;}
+ .about-text {max-width:700px;margin:0 auto;}
+ .about-text p {font-size:18px;}
+ .education-card {max-width:700px;margin:28px auto 0;}
+ .about-right {min-height:0;margin:10px auto 0;width:min(720px,100%);}
+ .about-collage {width:100%;}
+ .hand-note {right:0;}
+ .education-row {grid-template-columns:1fr;gap:4px;}
+}
+@media (max-width:640px) {
+ .about-title span {min-width:51px;height:64px;padding:6px 9px;font-size:38px;border-radius:10px;}
+ .about-title {gap:6px;}
+ .about-subtitle {font-size:15px;line-height:1.5;}
+ .about-text p {font-size:16px;line-height:1.72;margin-bottom:16px;}
+ .education-card {padding:22px 22px 26px;}
+ .edu-text {font-size:16px;}
+ .hand-note {font-size:23px;}
+ .about-sticker.s1 {left:14px;top:124px;}
+}
+@media (prefers-reduced-motion:reduce){.about-title span,.about-collage,.hand-note{transition:none!important;}}
